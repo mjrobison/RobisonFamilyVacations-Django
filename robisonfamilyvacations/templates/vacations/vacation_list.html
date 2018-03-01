@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static i18n %}
+{% block title %}Vacations{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h2>Vacation</h2>
+
+  <div class="list-group">
+    {% for vacation in vacation_list %}
+      <!-- <a href="{% url 'vacation:detail' user.username %}" class="list-group-item"> -->
+        <h4 class="list-group-item-heading">{{ vacation.location }}</h4>
+      </a>
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}
