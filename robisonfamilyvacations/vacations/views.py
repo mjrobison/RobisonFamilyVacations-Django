@@ -4,6 +4,7 @@ from django.views.generic import DetailView, ListView, RedirectView, UpdateView
 from django.shortcuts import render
 
 from .models import vacation
+from robisonfamilyvacations.users.models import User
 
 class VacationListView(LoginRequiredMixin, ListView):
     model = vacation
