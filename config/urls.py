@@ -17,7 +17,8 @@ urlpatterns = [
     url(r'^accounts/', include('allauth.urls')),
 
     # Your stuff: custom urls includes go here
-    url(r'^vacations/', include('robisonfamilyvacations.vacations.urls', namespace='vacation')),
+    url(r'^vacations/', include('vacations.urls', namespace='vacation')),
+    # url(r'^albums/', include('albums.urls', namespace='albums')),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
