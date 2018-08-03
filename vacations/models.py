@@ -2,6 +2,23 @@ from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
 from django.core.validators import MaxValueValidator, MinValueValidator
 
+class Album(models.Model):
+
+    title = models.CharField(max_length=255, blank=False)
+    date_added = models.DateTimeField(auto_now_add=True)
+    slug = models.SlugField(unique=True, max_length=250)
+    description = models.TextField(blank=True)
+    is_public = models.BooleanField(default=False)
+    # photos = 
+    
+    
+
+    def __str__(self):
+        return self.album_name
+    
+    class Meta:
+        db_table='albums'
+
 @python_2_unicode_compatible
 class Vacation(models.Model):
 
@@ -15,23 +32,6 @@ class Vacation(models.Model):
     
     class Meta:
         db_table = 'vacations'
-
-class Album(models.Model):
-
-    title = models.CharField(max_length=255, blank=False)
-    date_added = models.DateTimeField(auto_date_add_now=True)
-    slug = models.SlugField(unique=True, max_length=250)
-    description = models.TextField(blank=True)\
-    is_public = models.BooleanField(default=False)
-    # photos = 
-    
-    
-
-    def __str__(self):
-        return self.album_name
-    
-    class Meta:
-        db_table='albums'
 
 class Image(models.Model):
 
